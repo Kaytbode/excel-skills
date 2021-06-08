@@ -16,7 +16,7 @@ def slide(query, headings, file_name):
 
     # slide measurement
     cols = length
-    rows = 10
+    rows = len(records) + 1
     left = top = Inches(2.0)
     width = Inches(7.0)
     height = Inches(4.0)
