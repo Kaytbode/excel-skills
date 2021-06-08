@@ -1,11 +1,13 @@
-from fetch_all import fetch_data
+import sys
+from create_sheet import create_excel
+
+path = sys.path[0] + '/excel/'
 
 basic_query = "SELECT * FROM users"
-title = ['Id', 'Name', 'Location', 'Age']
-file_name = 'users.xlsx'
+headings = ['Id', 'Name', 'Location', 'Age']
+file_name = path + 'users.xlsx'
 
-
-fetch_data(basic_query, title, file_name)
+create_excel(basic_query, headings, file_name)
 
 # a simple join query
 # Get all users and their departments
@@ -15,11 +17,11 @@ simple_join = """SELECT u.*, d.department
                  JOIN departments d
                  ON u.id = d.student"""
 
-simple_join_title = ['Id', 'Name', 'Location', 'Age', 'department']
+simple_join_headings = ['Id', 'Name', 'Location', 'Age', 'department']
 
-file_name2 = 'simplejoin.xlsx'
+file_name2 = path + 'simplejoin.xlsx'
 
-fetch_data(simple_join, simple_join_title, file_name2)
+create_excel(simple_join, simple_join_headings, file_name2)
 
 # a filtered join query
 # get users that are in the sociology department
@@ -30,11 +32,11 @@ filtered_join = """SELECT u.*, d.department
                    ON u.id = d.student
                    WHERE d.department = 'Sociology'"""
 
-filter_join_title = ['Id', 'Name', 'Location', 'Age', 'department']
+filter_join_headings = ['Id', 'Name', 'Location', 'Age', 'department']
 
-file_name3 = 'filteredjoin.xlsx'
+file_name3 = path + 'filteredjoin.xlsx'
 
-fetch_data(filtered_join, filter_join_title, file_name3)
+create_excel(filtered_join, filter_join_headings, file_name3)
 
 # A comparison join query
 # get users that are less than 45 years old and live in lagos, in addition to their department
@@ -45,8 +47,8 @@ comparison_join = """SELECT u.*, d.department
                      ON u.id = d.student
                      WHERE u.location = 'Lagos' AND u.age < 45"""
 
-comparison_join_title = ['Id', 'Name', 'Location', 'Age', 'department']
+comparison_join_headings = ['Id', 'Name', 'Location', 'Age', 'department']
 
-file_name4 = 'comparisonjoin.xlsx'
+file_name4 = path + 'comparisonjoin.xlsx'
 
-fetch_data(comparison_join, comparison_join_title, file_name4)
+create_excel(comparison_join, comparison_join_headings, file_name4)
