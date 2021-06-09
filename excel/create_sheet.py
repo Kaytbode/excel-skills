@@ -1,9 +1,6 @@
 from openpyxl import Workbook
-from db.fetch_all import fetch_data
 
-def create_excel(query, headings, file_name):
-    records = fetch_data(query)
-
+def create_excel(records, headings, file_name):
     wb = Workbook()
 
     ws = wb.active
