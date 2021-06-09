@@ -29,3 +29,10 @@ A python script that pulls data from an external postgres database to excel and 
 2. Run `python main.py`
 
 3. Look into the `excel` and `ppt` folders for the generated excel and powerpoint files.
+
+## Packages Used
+- [Psycopg2](https://pypi.org/project/psycopg2/) enables communication to PostgreSQL through python.
+
+- [Openpyxl](https://openpyxl.readthedocs.io/en/stable/), a python library to read/write excel.
+
+- [python-pptx](https://python-pptx.readthedocs.io/en/latest/user/intro.html), a python library to create powerpoints.
